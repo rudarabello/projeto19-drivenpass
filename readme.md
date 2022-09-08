@@ -1,1 +1,1 @@
-#### This is my second Typescript project, API for management passwords. Uses cryptr, dayjs, dotenv, express, express-async-errors, faker, joi, pg and Node.
+#### This is my second Typescript project, API for management passwords. Uses prisma, cryptr, dayjs, dotenv, express, express-async-errors, joi, pg and Node.

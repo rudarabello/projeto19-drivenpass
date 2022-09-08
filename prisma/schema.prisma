@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id          Int           @id @default(autoincrement())
+  email       String        @unique
+  password    String
+  cards       cards[]
+  credentials credentials[]
+  safenotes   safenotes[]
+  sessions    sessions[]
+  wifis       wifis[]
+}
+
+model sessions {
+  id     Int     @id @default(autoincrement())
+  userId Int
+  token  String?
+  users  users   @relation(fields: [userId],references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model credentials {
+  id       Int    @id @default(autoincrement())
+  userId   Int
+  url      String
+  username String
+  password String
+  title    String
+  users    users  @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model safenotes {
+  id          Int    @id @default(autoincrement())
+  title       String @db.VarChar(50)
+  description String @db.VarChar(1000)
+  userId      Int
+  users       users  @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model cards {
+  id             Int      @id @default(autoincrement())
+  userId         Int
+  number         String
+  name           String
+  securityCode   String
+  expirationDate String   @db.VarChar(5)
+  isVirtual      Boolean?
+  password       String
+  type           String
+  title          String
+  users          users    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model wifis {
+  id       Int    @id @default(autoincrement())
+  userId   Int
+  name     String
+  password String
+  title    String
+  users    users  @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
