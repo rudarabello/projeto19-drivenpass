@@ -1,14 +1,15 @@
 
 import { Router } from "express";
-import getUserData from "../middlewares/authValidation/getUserdata";
-import credentialValidation from "../middlewares/credentialValidation";
 import * as credentialController from "../controllers/credentialController";
+import getUserData from "../middlewares/authValidation/getUserdata";
+import { validateSchema } from "../middlewares/validadeSchema";
+import credentialSchema from "../schemas/credentialSchema";
 
 const credentialRouter = Router();
 
 credentialRouter.post(
     "/categories/credentials/create",
-    credentialValidation,
+    validateSchema(credentialSchema),
     getUserData,
     credentialController.createCredential
 );

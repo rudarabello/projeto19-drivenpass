@@ -1,13 +1,14 @@
 import { Router } from "express";
 import getUserData from "../middlewares/authValidation/getUserdata";
-import cardValidation from "../middlewares/cardValidation";
+import { validateSchema } from "../middlewares/validadeSchema";
 import * as cardController from "../controllers/cardController";
+import cardSchema from "../schemas/cardSchema";
 
 const cardsRouter = Router();
 
 cardsRouter.post(
     "/categories/cards/create",
-    cardValidation,
+    validateSchema(cardSchema),
     getUserData,
     cardController.createCard
 );

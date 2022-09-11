@@ -1,13 +1,14 @@
 import { Router } from "express";
 import * as notesController from "../controllers/notesController";
 import getUserData from "../middlewares/authValidation/getUserdata";
-import noteValidation from "../middlewares/noteValidation";
+import { validateSchema } from "../middlewares/validadeSchema";
+import noteSchema from "../schemas/noteSchema";
 
 const notesRouter = Router();
 
 notesRouter.post(
     "/categories/notes/create",
-    noteValidation,
+    validateSchema(noteSchema),
     getUserData,
     notesController.createNote);
 notesRouter.get(
