@@ -2,7 +2,7 @@
   "name": "projeto19-drivenpass",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "build": "tsc",
     "dev": "nodemon ./src/app.ts",
