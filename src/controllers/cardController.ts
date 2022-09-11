@@ -31,7 +31,7 @@ export async function createCard(req:Request, res:Response){
 
     await cardServices.createCard(card);
 
-    return res.status(201).send("created");
+    return res.status(201).send("Card registred!");
 };
 
 export async function getCards(req:Request, res:Response) {
