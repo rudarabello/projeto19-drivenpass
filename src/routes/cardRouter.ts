@@ -7,7 +7,7 @@ import cardSchema from "../schemas/cardSchema";
 const cardsRouter = Router();
 
 cardsRouter.post(
-    "/categories/cards/create",
+    "/categories/create/card",
     validateSchema(cardSchema),
     getUserData,
     cardController.createCard

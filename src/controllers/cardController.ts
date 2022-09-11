@@ -11,15 +11,12 @@ export async function createCard(req:Request, res:Response){
         password,
         type,
         title }  = req.body;
-
     const { userInfo } = res.locals;
-
     if(isVirtual === 'true'){
         isVirtual = true;
     }else{
         isVirtual = false;
     }
-
     const card:ICardData = {
         number,
         name,

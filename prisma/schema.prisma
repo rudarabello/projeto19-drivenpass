@@ -49,7 +49,7 @@ model cards {
   number         String
   name           String
   securityCode   String
-  expirationDate String   @db.VarChar(5)
+  expirationDate String   @db.VarChar(6)
   isVirtual      Boolean?
   password       String
   type           String

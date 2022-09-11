@@ -11,7 +11,7 @@ export async function createCredential(credential:ICredentialData) {
     if(checkCredential) throw checkError(401,"You already registered a credential with this title!");
 
     credential.password = encrypt(credential.password);
-    
+    console.log(credential)
     await credentialMethods.insert(credential);
 }
 
