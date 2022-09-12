@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon ./src/app.ts",
     "build": "tsc && npx prisma migrate deploy",
-    "start": "ts-node ./src/app.js",
-    "dev": "nodemon ./src/app.ts"
+    "start": "node dist/src/app.js"
   },
   "keywords": [],
   "author": "",
