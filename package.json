@@ -1,7 +1,7 @@
 {
   "name": "projeto19-drivenpass",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "build": "tsc",
     "start": "node dist/src/app.js",
