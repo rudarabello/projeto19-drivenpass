@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "build": "tsc && npx prisma migrate deploy",
-    "start": "node dist/src/app.js",
+    "start": "ts-node ./src/app.js",
     "dev": "nodemon ./src/app.ts"
   },
   "keywords": [],
