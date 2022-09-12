@@ -21,7 +21,8 @@
     "express-async-errors": "^3.1.1",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
-    "pg": "^8.8.0"
+    "pg": "^8.8.0",
+    "tsc": "^2.0.4"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
