@@ -2,11 +2,10 @@
   "name": "projeto19-drivenpass",
   "version": "1.0.0",
   "main": "app.js",
-  "type": "module",
   "scripts": {
     "dev": "nodemon ./src/app.ts",
     "build": "tsc && npx prisma migrate deploy",
-    "start": "ts-node .src/app.ts"
+    "start": "ts-node ./src/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +35,7 @@
     "@types/pg": "^8.6.5",
     "nodemon": "^2.0.19",
     "prisma": "^4.3.1",
+    "ts-node": "^10.9.1",
     "typescript": "^4.8.3"
   }
 }
