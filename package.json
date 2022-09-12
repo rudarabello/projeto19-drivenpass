@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npx prisma migrate deploy",
     "start": "node dist/src/app.js",
     "dev": "nodemon ./src/app.ts"
   },
@@ -21,8 +21,7 @@
     "express-async-errors": "^3.1.1",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
-    "pg": "^8.8.0",
-    "tsc": "^2.0.4"
+    "pg": "^8.8.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
